@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #0f172a;
+  }
+}
+
+/* Custom scrollbar styling for dashboard scrollable sections */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Keyframes animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(-16px) scale(0.97);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-loader {
+  background: linear-gradient(90deg, #f8fafc 25%, #f1f5f9 50%, #f8fafc 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Ambient Floating Particles */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.06) rotate(3deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) scale(1.06) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) scale(1) rotate(-3deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 12s ease-in-out infinite;
+}
+
+/* Premium SaaS Shadows */
+.shadow-premium {
+  box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.08), 0 2px 8px -1px rgba(148, 163, 184, 0.04);
+}
+
+.shadow-hover {
+  box-shadow: 0 12px 30px -4px rgba(148, 163, 184, 0.14), 0 4px 12px -2px rgba(148, 163, 184, 0.06);
+}
+
+/* Glassmorphism styling helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Background Flight & Radar Animations */
+@keyframes flyPlane {
+  0% {
+    transform: translate(-20vw, 40vh) rotate(15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(120vw, -10vh) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-fly-plane {
+  animation: flyPlane 18s linear infinite;
+}
+
+@keyframes flyPlaneSlow {
+  0% {
+    transform: translate(120vw, 30vh) rotate(-165deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.08;
+  }
+  90% {
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate(-20vw, 0vh) rotate(-165deg);
+    opacity: 0;
+  }
+}
+
+.animate-fly-plane-slow {
+  animation: flyPlaneSlow 28s linear infinite;
+}
+
+@keyframes radarSweep {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.18;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 8s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+}
+
